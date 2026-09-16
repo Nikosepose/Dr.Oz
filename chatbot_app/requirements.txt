@@ -1,0 +1,2 @@
+# No third-party Python packages are required.
+# Use Python 3.10+ with Tkinter (included in the standard Windows installer).
