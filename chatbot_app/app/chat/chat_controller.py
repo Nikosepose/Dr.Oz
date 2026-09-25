@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 from app.chat.chat_session import ChatSession
+from app.logic.conversation_state import initialize_context
 from app.logic.chatbot_engine import ChatbotEngine
 from app.models.message import Message
+from app.data.messages import GREETINGS
 
 
 class ChatController:
@@ -15,24 +17,18 @@ class ChatController:
         self.engine = engine
 
     def start_session(self) -> Message:
-        """Create the selected greeting once, even if startup is called again."""
+        """Opprett riktig åpningsmelding én gang per samtale."""
         if self.session.initial_message is not None:
             return self.session.initial_message
 
-        if self.session.start_mode == "introduction":
-            greeting = (
-                "Hello! This is currently a dummy chatbot.\n\n"
-                "For now, I can echo your messages and keep the conversation "
-                "history while this chat is open. Future versions may collect "
-                "information and use it to guide the conversation.\n\n"
-                "What would you like to talk about?"
-            )
-        else:
-            greeting = "Hello! How can I help you today?"
+        # Velg og lagre introduksjonsvariant før første tekst vises.
+        initialize_context(self.session.context)
+        greeting = GREETINGS[self.session.start_mode]
 
         message = Message(sender="bot", text=greeting)
         self.session.add_message(message)
         self.session.initial_message = message
+
         return message
 
     def handle_user_message(self, text: str) -> Message | None:

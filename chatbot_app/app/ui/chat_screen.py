@@ -11,7 +11,7 @@ from app.chat.chat_controller import ChatController
 
 
 class ChatScreen(ttk.Frame):
-    """The same chat interface is used for direct and introduction sessions."""
+    """Vis og håndter én aktiv symptomkartleggingssamtale."""
 
     def __init__(
         self,
@@ -25,15 +25,15 @@ class ChatScreen(ttk.Frame):
 
         header = ttk.Frame(self)
         header.pack(fill="x", pady=(0, 16))
-        ttk.Label(header, text="Chat", font=("TkDefaultFont", 18)).pack(side="left")
-        ttk.Button(header, text="Back", command=on_back).pack(side="right")
+        ttk.Label(header, text="Dr.Oz – samtale", font=("TkDefaultFont", 18)).pack(side="left")
+        ttk.Button(header, text="Tilbake", command=on_back).pack(side="right")
 
         self.conversation = ScrolledText(
             self, wrap="word", state="disabled", font="TkTextFont", height=16
         )
         self.conversation.pack(fill="both", expand=True)
 
-        ttk.Label(self, text="Type a message:").pack(anchor="w", pady=(14, 4))
+        ttk.Label(self, text="Svar eller beskriv et symptom:").pack(anchor="w", pady=(14, 4))
         input_row = ttk.Frame(self)
         input_row.pack(fill="x")
         self.message_input = ttk.Entry(input_row, textvariable=self.input_text)
@@ -59,7 +59,7 @@ class ChatScreen(ttk.Frame):
         self.conversation.configure(state="normal")
         self.conversation.delete("1.0", "end")
         for message in self.controller.session.get_messages():
-            label = "Bot" if message.sender == "bot" else "User"
+            label = "Dr.Oz" if message.sender == "bot" else "Du"
             self.conversation.insert("end", f"{label}:\n{message.text}\n\n")
         self.conversation.configure(state="disabled")
         self.conversation.see("end")

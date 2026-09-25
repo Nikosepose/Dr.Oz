@@ -1,0 +1,763 @@
+{
+  "schema_version": 2,
+  "description": "Pedagogisk utvalg av 30 vanlige tilstander med ulike symptombilder; ikke en rangert liste over de 30 hyppigste diagnosene.",
+  "model_note": "Alle tall er syntetiske modellvekter valgt for demonstrasjon. Verken priorene, symptomvektene eller normaliserte resultater er klinisk validerte sannsynligheter. Kildene beskriver symptomer, ikke tallene.",
+  "default_symptom_probability": 0.03,
+  "source_review_date": "2026-09-25",
+  "diseases": [
+    {
+      "id": "common_cold",
+      "name": "Forkjølelse",
+      "diagnosis": "Forkjølelse er en virusinfeksjon i øvre luftveier. Hvil, drikk nok og bruk symptomlindring ved behov. Kontakt lege ved tydelig forverring, svært dårlig allmenntilstand eller plager som varer over to uker.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "runny_nose": 0.85,
+        "blocked_nose": 0.8,
+        "sneezing": 0.7,
+        "sore_throat": 0.65,
+        "cough": 0.65,
+        "hoarseness": 0.35,
+        "fatigue": 0.4,
+        "fever": 0.25,
+        "body_aches": 0.2,
+        "headache": 0.25,
+        "reduced_smell": 0.2,
+        "sinus_pain": 0.15,
+        "abrupt_onset": 0.15,
+        "productive_cough": 0.25
+      },
+      "characteristic_symptoms": [
+        "runny_nose",
+        "blocked_nose",
+        "sneezing",
+        "sore_throat"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/common-cold/"
+      ]
+    },
+    {
+      "id": "influenza",
+      "name": "Influensa",
+      "diagnosis": "Influensa er en virusinfeksjon som ofte gir brå feber, muskelsmerter og hoste. Hvil, drikk godt og bruk feberlindring ved behov. Kontakt lege tidlig hvis du er i risikogruppe, eller ved forverring; søk rask hjelp ved tung pust.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "fever": 0.85,
+        "body_aches": 0.85,
+        "abrupt_onset": 0.85,
+        "fatigue": 0.9,
+        "cough": 0.75,
+        "headache": 0.65,
+        "sore_throat": 0.4,
+        "runny_nose": 0.25,
+        "blocked_nose": 0.2,
+        "sneezing": 0.15,
+        "productive_cough": 0.2
+      },
+      "characteristic_symptoms": [
+        "fever",
+        "body_aches",
+        "abrupt_onset",
+        "fatigue"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/flu/"
+      ]
+    },
+    {
+      "id": "acute_sinusitis",
+      "name": "Akutt bihulebetennelse",
+      "diagnosis": "Akutt bihulebetennelse er irritasjon og betennelse i bihulene, ofte etter forkjølelse. Saltvannsskylling og smertelindring kan hjelpe. Kontakt lege ved sterke smerter, høy feber, hevelse rundt øyet eller plager som ikke bedres.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "sinus_pain": 0.85,
+        "blocked_nose": 0.85,
+        "thick_nasal_mucus": 0.75,
+        "reduced_smell": 0.65,
+        "runny_nose": 0.65,
+        "headache": 0.55,
+        "fever": 0.4,
+        "cough": 0.3,
+        "fatigue": 0.4,
+        "ear_pain": 0.15
+      },
+      "characteristic_symptoms": [
+        "sinus_pain",
+        "blocked_nose",
+        "thick_nasal_mucus",
+        "reduced_smell"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/sinusitis-sinus-infection/"
+      ]
+    },
+    {
+      "id": "tonsillitis",
+      "name": "Halsbetennelse i mandlene",
+      "diagnosis": "Halsbetennelse i mandlene kan skyldes virus eller bakterier. Drikk jevnlig og bruk smertelindring ved behov. Kontakt lege ved høy feber, uttalte svelgevansker eller vedvarende plager; søk rask hjelp hvis du får pustevansker eller ikke får i deg væske.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "sore_throat": 0.9,
+        "painful_swallowing": 0.85,
+        "swollen_tonsils": 0.85,
+        "tonsil_exudate": 0.6,
+        "tender_neck_nodes": 0.6,
+        "fever": 0.75,
+        "headache": 0.4,
+        "fatigue": 0.45,
+        "ear_pain": 0.25,
+        "nausea": 0.15,
+        "vomiting": 0.1,
+        "cough": 0.2
+      },
+      "characteristic_symptoms": [
+        "painful_swallowing",
+        "swollen_tonsils",
+        "tonsil_exudate",
+        "tender_neck_nodes"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/tonsillitis/"
+      ]
+    },
+    {
+      "id": "acute_bronchitis",
+      "name": "Akutt bronkitt",
+      "diagnosis": "Akutt bronkitt er betennelse i luftveiene og gir ofte langvarig hoste. Hvil, drikk nok og unngå røyk. Kontakt lege ved feber, blodig oppspytt, brystsmerter eller økende tung pust.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "cough": 0.9,
+        "productive_cough": 0.8,
+        "chest_pain_coughing": 0.65,
+        "shortness_of_breath": 0.4,
+        "wheezing": 0.3,
+        "sore_throat": 0.3,
+        "runny_nose": 0.3,
+        "fever": 0.35,
+        "fatigue": 0.5
+      },
+      "characteristic_symptoms": [
+        "productive_cough",
+        "chest_pain_coughing",
+        "shortness_of_breath"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/bronchitis/"
+      ]
+    },
+    {
+      "id": "asthma",
+      "name": "Astma",
+      "diagnosis": "Astma innebærer perioder med trange og irriterte luftveier. Følg behandlingsplanen din og unngå kjente utløsere. Kontakt lege hvis symptomene øker eller medisinen hjelper dårlig; søk akutt hjelp ved alvorlig pustebesvær.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "wheezing": 0.85,
+        "shortness_of_breath": 0.8,
+        "chest_tightness": 0.7,
+        "breathing_triggers": 0.8,
+        "cough": 0.65,
+        "productive_cough": 0.15,
+        "fever": 0.05,
+        "itchy_nose": 0.15,
+        "itchy_eyes": 0.15
+      },
+      "characteristic_symptoms": [
+        "wheezing",
+        "shortness_of_breath",
+        "chest_tightness",
+        "breathing_triggers"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/asthma/"
+      ]
+    },
+    {
+      "id": "allergic_rhinitis",
+      "name": "Allergisk rhinitt (høysnue)",
+      "diagnosis": "Høysnue er en allergisk reaksjon i nesen, ofte på pollen eller andre allergener. Begrens eksponering og spør apotek om allergimedisin eller nesespray. Kontakt lege hvis plagene vedvarer eller behandlingen ikke hjelper.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "sneezing": 0.9,
+        "itchy_nose": 0.85,
+        "itchy_eyes": 0.8,
+        "runny_nose": 0.85,
+        "blocked_nose": 0.65,
+        "red_eyes": 0.55,
+        "reduced_smell": 0.25,
+        "cough": 0.25,
+        "fatigue": 0.25,
+        "headache": 0.2,
+        "fever": 0.04,
+        "eye_discharge": 0.08
+      },
+      "characteristic_symptoms": [
+        "sneezing",
+        "itchy_nose",
+        "itchy_eyes",
+        "runny_nose"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/hay-fever/"
+      ]
+    },
+    {
+      "id": "conjunctivitis",
+      "name": "Øyekatarr (konjunktivitt)",
+      "diagnosis": "Øyekatarr er betennelse i øyets bindehinne og kan skyldes infeksjon eller irritasjon. Vask hendene og fjern sekret forsiktig med rent vann. Kontakt lege ved smerter, lysømfintlighet, synsendring eller manglende bedring.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "red_eyes": 0.9,
+        "eye_discharge": 0.8,
+        "gritty_eyes": 0.8,
+        "itchy_eyes": 0.6,
+        "runny_nose": 0.15,
+        "fever": 0.08
+      },
+      "characteristic_symptoms": [
+        "red_eyes",
+        "eye_discharge",
+        "gritty_eyes"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/conjunctivitis/"
+      ]
+    },
+    {
+      "id": "otitis_media",
+      "name": "Mellomørebetennelse",
+      "diagnosis": "Mellomørebetennelse er betennelse bak trommehinnen og kan gi øresmerter og nedsatt hørsel. Smertelindring kan hjelpe. Kontakt lege ved sterke eller vedvarende smerter, feber, væske fra øret eller redusert allmenntilstand.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "ear_pain": 0.9,
+        "reduced_hearing": 0.7,
+        "ear_discharge": 0.35,
+        "fever": 0.6,
+        "runny_nose": 0.35,
+        "blocked_nose": 0.35,
+        "fatigue": 0.3,
+        "abrupt_onset": 0.5
+      },
+      "characteristic_symptoms": [
+        "ear_pain",
+        "reduced_hearing",
+        "ear_discharge"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/ear-infections/"
+      ]
+    },
+    {
+      "id": "gastroenteritis",
+      "name": "Mage-tarminfeksjon (omgangssyke)",
+      "diagnosis": "Omgangssyke er en infeksjon i mage og tarm som kan gi oppkast og diaré. Drikk små mengder ofte, gjerne væske med salter, og hvil. Kontakt lege ved tegn til dehydrering, blod i avføringen, sterke magesmerter eller langvarige plager.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "diarrhea": 0.85,
+        "vomiting": 0.8,
+        "nausea": 0.85,
+        "abdominal_cramps": 0.75,
+        "fever": 0.4,
+        "fatigue": 0.5,
+        "abrupt_onset": 0.65,
+        "bloating": 0.2
+      },
+      "characteristic_symptoms": [
+        "diarrhea",
+        "vomiting",
+        "abdominal_cramps"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/symptoms/diarrhoea-and-vomiting/",
+        "https://www.uhs.nhs.uk/Media/UHS-website-2019/Patientinformation/Visitinghospital/Gastroenteritis-caused-by-norovirus-and-other-viruses-patient-information.pdf"
+      ]
+    },
+    {
+      "id": "gastroesophageal_reflux",
+      "name": "Refluks (sure oppstøt)",
+      "diagnosis": "Refluks betyr at mageinnhold strømmer opp i spiserøret og gir halsbrann eller sure oppstøt. Spis mindre måltider og unngå å legge deg rett etter mat; spør apotek om lindring. Kontakt lege ved svelgevansker, vekttap, blodig oppkast eller vedvarende plager.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "heartburn": 0.9,
+        "acid_regurgitation": 0.85,
+        "worse_after_meals_or_lying": 0.8,
+        "bloating": 0.3,
+        "nausea": 0.25,
+        "cough": 0.25,
+        "hoarseness": 0.25,
+        "abdominal_cramps": 0.1
+      },
+      "characteristic_symptoms": [
+        "heartburn",
+        "acid_regurgitation",
+        "worse_after_meals_or_lying"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/"
+      ]
+    },
+    {
+      "id": "constipation",
+      "name": "Forstoppelse",
+      "diagnosis": "Forstoppelse betyr at avføringen kommer sjeldnere eller er hard og vanskelig å få ut. Drikk nok, vær i aktivitet og øk fiber gradvis; spør apotek ved behov. Kontakt lege ved blod i avføringen, sterke smerter eller nye vedvarende endringer.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "constipation": 0.9,
+        "hard_stools": 0.85,
+        "straining": 0.8,
+        "bloating": 0.6,
+        "abdominal_cramps": 0.4,
+        "nausea": 0.2,
+        "pain_relieved_defecation": 0.3,
+        "recurrent_bowel_changes": 0.15,
+        "bright_rectal_bleeding": 0.1
+      },
+      "characteristic_symptoms": [
+        "constipation",
+        "hard_stools",
+        "straining"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/constipation/"
+      ]
+    },
+    {
+      "id": "irritable_bowel_syndrome",
+      "name": "Irritabel tarm (IBS)",
+      "diagnosis": "Irritabel tarm gir tilbakevendende magesmerter og endret avføring uten at det nødvendigvis foreligger skade i tarmen. Regelmessige måltider og å kartlegge egne utløsere kan hjelpe. Kontakt lege ved blod i avføringen, vekttap, nye symptomer eller vedvarende plager.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "abdominal_cramps": 0.85,
+        "bloating": 0.85,
+        "recurrent_bowel_changes": 0.7,
+        "pain_relieved_defecation": 0.8,
+        "diarrhea": 0.5,
+        "constipation": 0.5,
+        "hard_stools": 0.35,
+        "straining": 0.4,
+        "nausea": 0.25,
+        "fatigue": 0.3,
+        "urinary_frequency": 0.15,
+        "urinary_urgency": 0.15,
+        "low_back_pain": 0.15
+      },
+      "characteristic_symptoms": [
+        "abdominal_cramps",
+        "bloating",
+        "recurrent_bowel_changes",
+        "pain_relieved_defecation"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/irritable-bowel-syndrome-ibs/symptoms/"
+      ]
+    },
+    {
+      "id": "hemorrhoids",
+      "name": "Hemoroider",
+      "diagnosis": "Hemoroider er utvidede blodårer ved endetarmen som kan gi kløe, kul og friskt blod. Unngå hard pressing og hold avføringen myk med væske og fiber. Kontakt lege ved blødning, særlig hvis den er ny eller gjentatt, eller ved sterke smerter.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "anal_itching": 0.75,
+        "anal_lump": 0.8,
+        "bright_rectal_bleeding": 0.75,
+        "constipation": 0.4,
+        "hard_stools": 0.35,
+        "straining": 0.5
+      },
+      "characteristic_symptoms": [
+        "anal_itching",
+        "anal_lump",
+        "bright_rectal_bleeding"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/piles-haemorrhoids/"
+      ]
+    },
+    {
+      "id": "cystitis",
+      "name": "Blærekatarr (nedre urinveisinfeksjon)",
+      "diagnosis": "Blærekatarr er en infeksjon i urinblæren som ofte gir svie og hyppig vannlating. Drikk normalt og kontakt lege for vurdering, særlig ved graviditet eller hos menn. Søk rask hjelp ved feber, smerter i siden eller tydelig sykdomsfølelse.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "dysuria": 0.9,
+        "urinary_frequency": 0.85,
+        "urinary_urgency": 0.8,
+        "cloudy_urine": 0.65,
+        "lower_abdominal_pain": 0.6,
+        "blood_urine": 0.25,
+        "fatigue": 0.2,
+        "fever": 0.08,
+        "nausea": 0.1
+      },
+      "characteristic_symptoms": [
+        "dysuria",
+        "urinary_frequency",
+        "urinary_urgency",
+        "cloudy_urine"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/urinary-tract-infections-utis/"
+      ]
+    },
+    {
+      "id": "kidney_stone",
+      "name": "Nyrestein",
+      "diagnosis": "Nyrestein er harde avleiringer i urinveiene som kan gi intense smerter i siden og blod i urinen. Kontakt lege for vurdering og smertelindring. Søk rask hjelp ved feber, sterke smerter som ikke gir seg, oppkast eller problemer med å tisse.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "flank_pain_waves": 0.9,
+        "pain_to_groin": 0.8,
+        "blood_urine": 0.6,
+        "nausea": 0.65,
+        "vomiting": 0.45,
+        "abrupt_onset": 0.65,
+        "dysuria": 0.25,
+        "urinary_frequency": 0.2,
+        "lower_abdominal_pain": 0.3,
+        "fever": 0.08
+      },
+      "characteristic_symptoms": [
+        "flank_pain_waves",
+        "pain_to_groin",
+        "blood_urine"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/kidney-stones/symptoms/"
+      ]
+    },
+    {
+      "id": "vaginal_candidiasis",
+      "name": "Soppinfeksjon i skjeden",
+      "diagnosis": "Soppinfeksjon i skjeden kan gi kløe, svie og tykk, hvit utflod. Unngå parfymerte produkter og spør apotek om lokal behandling hvis plagene er gjenkjennelige. Kontakt lege ved første episode, graviditet, tilbakevendende plager eller usikker diagnose.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "vaginal_itching": 0.9,
+        "thick_white_discharge": 0.8,
+        "vulval_soreness": 0.8,
+        "dysuria": 0.4
+      },
+      "characteristic_symptoms": [
+        "vaginal_itching",
+        "thick_white_discharge",
+        "vulval_soreness"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/thrush-in-men-and-women/"
+      ]
+    },
+    {
+      "id": "migraine",
+      "name": "Migrene",
+      "diagnosis": "Migrene gir anfall med hodepine, ofte sammen med kvalme og lys- eller lydfølsomhet. Hvil i rolige omgivelser og bruk avtalt anfallsbehandling tidlig. Kontakt lege ved nye eller hyppige anfall; søk akutt hjelp ved plutselig svært kraftig hodepine eller nye nevrologiske symptomer.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "headache": 0.9,
+        "pulsating_headache": 0.85,
+        "one_sided_headache": 0.7,
+        "light_sensitivity": 0.8,
+        "sound_sensitivity": 0.75,
+        "headache_worse_activity": 0.8,
+        "nausea": 0.7,
+        "vomiting": 0.35,
+        "visual_aura": 0.3,
+        "fatigue": 0.4,
+        "neck_tightness": 0.25,
+        "bilateral_headache": 0.2,
+        "pressing_headache": 0.1
+      },
+      "characteristic_symptoms": [
+        "pulsating_headache",
+        "one_sided_headache",
+        "light_sensitivity",
+        "headache_worse_activity"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/migraine/"
+      ]
+    },
+    {
+      "id": "tension_headache",
+      "name": "Spenningshodepine",
+      "diagnosis": "Spenningshodepine gir ofte et press på begge sider av hodet. Søvn, pauser, bevegelse og avspenning kan hjelpe. Kontakt lege ved hyppig eller endret hodepine; søk akutt hjelp ved plutselig svært kraftig hodepine eller lammelser.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "headache": 0.9,
+        "pressing_headache": 0.85,
+        "bilateral_headache": 0.8,
+        "neck_tightness": 0.65,
+        "fatigue": 0.2,
+        "light_sensitivity": 0.15,
+        "sound_sensitivity": 0.15,
+        "headache_worse_activity": 0.08,
+        "nausea": 0.08,
+        "pulsating_headache": 0.08,
+        "one_sided_headache": 0.15
+      },
+      "characteristic_symptoms": [
+        "pressing_headache",
+        "bilateral_headache",
+        "neck_tightness"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/tension-headaches/"
+      ]
+    },
+    {
+      "id": "benign_positional_vertigo",
+      "name": "Krystallsyke",
+      "diagnosis": "Krystallsyke gir korte anfall med rotasjonssvimmelhet når hodet skifter stilling. Unngå fall og kontakt lege eller fysioterapeut for vurdering og stillingsmanøver. Søk rask hjelp ved ny kraftig svimmelhet med talevansker, lammelse eller dobbeltsyn.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "spinning_vertigo": 0.9,
+        "position_triggered_vertigo": 0.9,
+        "brief_vertigo": 0.9,
+        "nausea": 0.65,
+        "vomiting": 0.2,
+        "abrupt_onset": 0.6
+      },
+      "characteristic_symptoms": [
+        "spinning_vertigo",
+        "position_triggered_vertigo",
+        "brief_vertigo"
+      ],
+      "source_urls": [
+        "https://www.helsenorge.no/sykdom/svimmelhet-og-balanseforstyrrelser/krystallsyke/"
+      ]
+    },
+    {
+      "id": "mechanical_low_back_pain",
+      "name": "Mekaniske korsryggsmerter (lumbago)",
+      "diagnosis": "Mekaniske korsryggsmerter kommer ofte fra muskler og ledd i ryggen. Hold deg i skånsom aktivitet og bruk smertelindring ved behov. Kontakt lege ved vedvarende eller økende plager; søk rask hjelp ved vannlatingsproblemer, nummenhet i skrittet eller økende kraftsvikt.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "low_back_pain": 0.9,
+        "back_pain_movement": 0.85,
+        "abrupt_onset": 0.4,
+        "radiating_leg_pain": 0.15,
+        "leg_tingling": 0.06
+      },
+      "characteristic_symptoms": [
+        "low_back_pain",
+        "back_pain_movement"
+      ],
+      "source_urls": [
+        "https://www.helsenorge.no/sykdom/muskel-og-skjelett/ryggsmerter/",
+        "https://www.nhs.uk/conditions/back-pain/"
+      ]
+    },
+    {
+      "id": "sciatica",
+      "name": "Isjias",
+      "diagnosis": "Isjias er smerte som stråler fra ryggen ned i benet når en nerve blir irritert. Hold deg i aktivitet innenfor smertegrensen og kontakt lege ved vedvarende smerter eller kraftsvikt. Søk rask hjelp ved problemer med vannlating, nummenhet i skrittet eller raskt økende lammelse.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "radiating_leg_pain": 0.9,
+        "leg_tingling": 0.8,
+        "low_back_pain": 0.65,
+        "back_pain_movement": 0.7,
+        "abrupt_onset": 0.4
+      },
+      "characteristic_symptoms": [
+        "radiating_leg_pain",
+        "leg_tingling"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/sciatica/"
+      ]
+    },
+    {
+      "id": "osteoarthritis",
+      "name": "Artrose (slitasjegikt)",
+      "diagnosis": "Artrose er forandringer i ledd som kan gi smerter og stivhet, særlig ved belastning. Tilpasset styrketrening og jevn aktivitet kan bedre funksjonen. Kontakt lege eller fysioterapeut ved betydelige plager, eller hvis leddet blir akutt rødt, varmt og hovent.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "joint_pain": 0.9,
+        "joint_stiffness": 0.85,
+        "activity_joint_pain": 0.85,
+        "ankle_pain": 0.12,
+        "ankle_swelling": 0.08,
+        "low_back_pain": 0.1
+      },
+      "characteristic_symptoms": [
+        "joint_pain",
+        "joint_stiffness",
+        "activity_joint_pain"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/osteoarthritis/symptoms/"
+      ]
+    },
+    {
+      "id": "ankle_sprain",
+      "name": "Ankelforstuing",
+      "diagnosis": "Ankelforstuing er en skade i leddbåndene rundt ankelen. Avlast kortvarig, bruk kompresjon og begynn gradvis å belaste når smerten tillater det. Kontakt lege ved feilstilling, manglende evne til å gå noen skritt eller smerter som ikke bedres.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "ankle_twist": 0.9,
+        "ankle_pain": 0.9,
+        "ankle_swelling": 0.85,
+        "bruising": 0.65,
+        "abrupt_onset": 0.8,
+        "joint_pain": 0.45,
+        "activity_joint_pain": 0.55,
+        "joint_stiffness": 0.25
+      },
+      "characteristic_symptoms": [
+        "ankle_twist",
+        "ankle_pain",
+        "ankle_swelling",
+        "bruising"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/sprains-and-strains/"
+      ]
+    },
+    {
+      "id": "atopic_eczema",
+      "name": "Atopisk eksem",
+      "diagnosis": "Atopisk eksem gir tørr, kløende hud med tilbakevendende utslett. Smør regelmessig med fuktighetskrem og unngå kjente irritanter; spør lege om behandling ved oppbluss. Kontakt lege ved væskende, smertefull hud eller dårlig effekt av egenbehandling.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "rash": 0.85,
+        "itchy_skin": 0.9,
+        "dry_skin": 0.9,
+        "flexural_rash": 0.75,
+        "recurrent_skin_flares": 0.85,
+        "night_itch": 0.5,
+        "blisters": 0.2,
+        "scaly_plaques": 0.2,
+        "exposure_localized_rash": 0.15,
+        "finger_web_rash": 0.15
+      },
+      "characteristic_symptoms": [
+        "dry_skin",
+        "flexural_rash",
+        "recurrent_skin_flares",
+        "itchy_skin"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/atopic-eczema/"
+      ]
+    },
+    {
+      "id": "contact_dermatitis",
+      "name": "Kontakteksem",
+      "diagnosis": "Kontakteksem er hudbetennelse etter kontakt med et irriterende stoff eller et allergen. Unngå det mistenkte stoffet og bruk fuktighetskrem. Kontakt lege ved utbredte eller vedvarende plager, eller hvis huden blir varm, smertefull og væskende.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "rash": 0.85,
+        "exposure_localized_rash": 0.9,
+        "itchy_skin": 0.85,
+        "dry_skin": 0.65,
+        "blisters": 0.5,
+        "recurrent_skin_flares": 0.35,
+        "finger_web_rash": 0.2,
+        "night_itch": 0.25,
+        "flexural_rash": 0.1
+      },
+      "characteristic_symptoms": [
+        "exposure_localized_rash",
+        "itchy_skin",
+        "dry_skin",
+        "blisters"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/contact-dermatitis/symptoms/"
+      ]
+    },
+    {
+      "id": "urticaria",
+      "name": "Elveblest (urtikaria)",
+      "diagnosis": "Elveblest gir kløende vabler som kan komme og gå. Unngå kjente utløsere og spør apotek om antihistamin. Ring 113 ved pustevansker, hevelse i tunge eller hals, eller svimmelhet med tegn til alvorlig allergisk reaksjon.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "rash": 0.9,
+        "raised_wheals": 0.9,
+        "changing_wheals": 0.9,
+        "itchy_skin": 0.85,
+        "abrupt_onset": 0.7,
+        "recurrent_skin_flares": 0.35,
+        "night_itch": 0.2
+      },
+      "characteristic_symptoms": [
+        "raised_wheals",
+        "changing_wheals",
+        "itchy_skin"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/hives/",
+        "https://www.hey.nhs.uk/patient-leaflet/urticaria-and-angioedema/"
+      ]
+    },
+    {
+      "id": "psoriasis",
+      "name": "Psoriasis",
+      "diagnosis": "Psoriasis er en langvarig betennelsestilstand i huden som ofte gir skjellende flekker. Bruk fuktighetskrem og få vurdert behandling hos lege ved plagsomme utslett. Kontakt lege også ved hovne eller smertefulle ledd.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "rash": 0.85,
+        "scaly_plaques": 0.9,
+        "extensor_plaques": 0.75,
+        "scalp_scaling": 0.6,
+        "recurrent_skin_flares": 0.85,
+        "dry_skin": 0.7,
+        "itchy_skin": 0.55,
+        "joint_pain": 0.15,
+        "joint_stiffness": 0.15,
+        "flexural_rash": 0.15
+      },
+      "characteristic_symptoms": [
+        "scaly_plaques",
+        "extensor_plaques",
+        "scalp_scaling",
+        "recurrent_skin_flares"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/psoriasis/"
+      ]
+    },
+    {
+      "id": "acne",
+      "name": "Akne (kviser)",
+      "diagnosis": "Akne oppstår når porer tettes og blir betente, og gir kviser og hudormer. Vask huden skånsomt og prøv egnet behandling fra apotek over tid. Kontakt lege ved dype, smertefulle kviser, arr eller manglende bedring.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "pimples": 0.9,
+        "blackheads": 0.85,
+        "rash": 0.25,
+        "recurrent_skin_flares": 0.65,
+        "itchy_skin": 0.1
+      },
+      "characteristic_symptoms": [
+        "pimples",
+        "blackheads"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/acne/"
+      ]
+    },
+    {
+      "id": "scabies",
+      "name": "Skabb",
+      "diagnosis": "Skabb skyldes midd i huden og gir ofte sterk nattlig kløe. Kontakt lege eller apotek for riktig behandling; nærkontakter må ofte behandles samtidig, og tekstiler håndteres etter anbefaling. Kontakt lege hvis kløen vedvarer etter behandlingen eller huden blir infisert.",
+      "prior": 0.03333333333333333,
+      "symptoms": {
+        "rash": 0.85,
+        "itchy_skin": 0.9,
+        "night_itch": 0.9,
+        "finger_web_rash": 0.8,
+        "burrows": 0.6,
+        "itchy_contacts": 0.65,
+        "blisters": 0.2
+      },
+      "characteristic_symptoms": [
+        "night_itch",
+        "finger_web_rash",
+        "burrows",
+        "itchy_contacts"
+      ],
+      "source_urls": [
+        "https://www.nhs.uk/conditions/scabies/"
+      ]
+    }
+  ]
+}
